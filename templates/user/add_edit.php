@@ -1,5 +1,6 @@
 <?php require_once _TEMPLATEPATH_ . '/header.php';
 /** @var \App\Entity\User $user */
+
 ?>
 
 <h1><?= $pageTitle; ?></h1>

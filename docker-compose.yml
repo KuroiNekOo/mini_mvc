@@ -1,0 +1,27 @@
+services:
+  php:
+    build: 
+      context: .
+    ports:
+      - "8101:8101"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - external
+
+  db:
+    image: mysql:8.0-oracle
+    container_name: token-service-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=minimvc
+    ports:
+      - 3309:3306
+    networks:
+      - external
+
+networks:
+  external:
+    driver: bridge
