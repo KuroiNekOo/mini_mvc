@@ -53,7 +53,6 @@ class UserRepository extends Repository
                                                     email = :email, password = :password  WHERE id = :id'
                 );
                 $query->bindValue(':id', $user->getId(), $this->pdo::PARAM_INT);
-           
 
         } else {
             $query = $this->pdo->prepare('INSERT INTO user (first_name, last_name, email, password) 

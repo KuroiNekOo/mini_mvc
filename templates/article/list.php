@@ -11,7 +11,7 @@
             ">
                 <?= $article->getTitle() ?>
             </h3>
-            <a href="articles?controller=page&action=articles&subaction=show&id=<?= $article->getId() ?>" class="btn btn-primary">Lire plus</a>
+            <a href="articles?controller=articles&action=show&id=<?= $article->getId() ?>" class="btn btn-primary">Lire plus</a>
         </div>
     </div>
 <?php endforeach; ?>

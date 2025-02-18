@@ -10,7 +10,7 @@
         ">
             <?= $article->getDescription() ?>
         </p>
-        <a href="articles?controller=page&action=articles&subaction=list" class="btn btn-primary">Retour</a>
+        <a href="articles?controller=articles&action=list" class="btn btn-primary">Retour</a>
     </div>
 </div>
 

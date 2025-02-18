@@ -11,8 +11,8 @@ class ArticleController extends Controller
     public function route(): void
     {
         try {
-            if (isset($_GET['subaction'])) {
-                switch ($_GET['subaction']) {
+            if (isset($_GET['action'])) {
+                switch ($_GET['action']) {
                     case 'list':
                         $this->list();
                         break;
@@ -20,7 +20,7 @@ class ArticleController extends Controller
                         $this->show();
                         break;
                     default:
-                        throw new \Exception("Cette action n'existe pas : " . $_GET['subaction']);
+                        throw new \Exception("Cette action n'existe pas : " . $_GET['action']);
                         break;
                 }
             } else {

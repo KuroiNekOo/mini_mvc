@@ -28,7 +28,7 @@ use App\Tools\NavigationTools;
                 <li class="nav-item">
                     <a href="index.php" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'home') ?>">Accueil</a>
                     <a href="index.php?controller=page&action=about" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'about') ?>">A propos</a>
-                    <a href="articles?controller=page&action=articles&subaction=list" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'articles') ?>">Articles</a>
+                    <a href="articles?controller=articles&action=list" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'articles') ?>">Articles</a>
                 </li>
             </ul>
 
