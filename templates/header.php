@@ -37,7 +37,7 @@ use App\Tools\NavigationTools;
                     <a href="index.php?controller=auth&action=logout" class="btn btn-primary">Déconnexion</a>
                 <?php } else { ?>
                     <a href="index.php?controller=auth&action=login" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('auth', 'login') ?>">Connexion</a>
-                    <a href="index.php?controller=user&action=register" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('user', 'register') ?>">Inscription</a>
+                    <a href="index.php?controller=auth&action=signup" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('user', 'register') ?>">Inscription</a>
                 <?php } ?>
             </div>
         </header>
