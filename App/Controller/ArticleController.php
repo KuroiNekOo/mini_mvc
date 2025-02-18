@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Repository\ArticleRepositorye;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 
@@ -59,9 +58,11 @@ class ArticleController extends Controller
             $errors = [];
             $articleRepository = new ArticleRepository();
             $article = $articleRepository->findOneById($_GET['id']);
+            $comments = $articleRepository->getComments($_GET['id']);
 
             $this->render('article/show', [
                 'article' => $article,
+                'comments' => $comments,
                 'pageTitle' => 'Article',
                 'errors' => ''
             ]);

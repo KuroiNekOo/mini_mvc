@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use App\Entity\Comment;
 use App\Db\Mysql;
 use App\Tools\StringTools;
 
@@ -45,6 +46,19 @@ class ArticleRepository extends Repository
         } else {
             return false;
         }
+    }
+
+    public function getComments(int $article_id)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM comment WHERE article_id = :article_id");
+        $query->bindParam(':article_id', $article_id, $this->pdo::PARAM_INT);
+        $query->execute();
+        $comments = $query->fetchAll($this->pdo::FETCH_ASSOC);
+        $commentsObjects = [];
+        foreach($comments as $comment) {
+            $commentsObjects[] = Comment::createAndHydrate($comment);;
+        }
+        return $commentsObjects;
     }
 
     public function persist(Article $article)

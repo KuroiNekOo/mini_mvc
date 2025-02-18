@@ -15,10 +15,15 @@ class Controller
                         $controller->route();
                         break;
                     case 'articles':
-                      //charger controleur article
-                      $controller = new ArticleController();
-                      $controller->route();
+                        //charger controleur article
+                        $controller = new ArticleController();
+                        $controller->route();
                       break;
+                    case 'comments':
+                        //charger controleur comment
+                        $controller = new CommentController();
+                        $controller->route();
+                        break;
                     case 'auth':
                         //charger controleur auth
                         $controller = new AuthController();
